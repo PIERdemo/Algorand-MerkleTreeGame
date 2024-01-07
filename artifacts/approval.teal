@@ -1,0 +1,432 @@
+#pragma version 8
+intcblock 0 1 33
+bytecblock 0x62616c616e6365 0x 0x73697a65 0x726f6f74 0x151f7c75 0x72
+txna ApplicationArgs 0
+pushbytes 0x299caa59 // "on_create(uint64,byte[],byte[])void"
+==
+bnz main_l14
+txna ApplicationArgs 0
+pushbytes 0xaa20f555 // "start_game(pay)void"
+==
+bnz main_l13
+txna ApplicationArgs 0
+pushbytes 0x6ae85d21 // "get_size()uint64"
+==
+bnz main_l12
+txna ApplicationArgs 0
+pushbytes 0x0d67cb02 // "get_root()byte[]"
+==
+bnz main_l11
+txna ApplicationArgs 0
+pushbytes 0x589a4c19 // "verify_leaf(string,byte[33][])void"
+==
+bnz main_l10
+txna ApplicationArgs 0
+pushbytes 0xb910c77b // "get_balance()uint64"
+==
+bnz main_l9
+txna ApplicationArgs 0
+pushbytes 0x4945561c // "account_balance()uint64"
+==
+bnz main_l8
+err
+main_l8:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub accountbalancecaster_15
+intc_1 // 1
+return
+main_l9:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub getbalancecaster_14
+intc_1 // 1
+return
+main_l10:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub verifyleafcaster_13
+intc_1 // 1
+return
+main_l11:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub getrootcaster_12
+intc_1 // 1
+return
+main_l12:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub getsizecaster_11
+intc_1 // 1
+return
+main_l13:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub startgamecaster_10
+intc_1 // 1
+return
+main_l14:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+==
+&&
+assert
+callsub oncreatecaster_9
+intc_1 // 1
+return
+
+// on_create
+oncreate_0:
+proto 3 0
+intc_0 // 0
+bytec_2 // "size"
+app_global_get_ex
+store 1
+store 0
+load 1
+!
+assert
+bytec_2 // "size"
+frame_dig -3
+app_global_put
+intc_0 // 0
+bytec_3 // "root"
+app_global_get_ex
+store 3
+store 2
+load 3
+!
+assert
+bytec_3 // "root"
+frame_dig -2
+extract 2 0
+app_global_put
+bytec_0 // "balance"
+intc_0 // 0
+app_global_put
+intc_0 // 0
+bytec 5 // "r"
+app_global_get_ex
+store 5
+store 4
+load 5
+!
+assert
+bytec 5 // "r"
+frame_dig -1
+extract 2 0
+app_global_put
+retsub
+
+// start_game
+startgame_1:
+proto 1 0
+frame_dig -1
+gtxns Receiver
+global CurrentApplicationAddress
+==
+assert
+frame_dig -1
+gtxns Amount
+intc_0 // 0
+>
+assert
+bytec_0 // "balance"
+frame_dig -1
+gtxns Amount
+app_global_put
+retsub
+
+// get_size
+getsize_2:
+proto 0 1
+intc_0 // 0
+bytec_2 // "size"
+app_global_get
+frame_bury 0
+retsub
+
+// get_root
+getroot_3:
+proto 0 1
+bytec_1 // ""
+bytec_3 // "root"
+app_global_get
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// verify_leaf
+verifyleaf_4:
+proto 2 0
+intc_0 // 0
+bytec_2 // "size"
+app_global_get
+frame_dig -1
+intc_0 // 0
+extract_uint16
+frame_bury 0
+frame_dig 0
+==
+assert
+bytec_0 // "balance"
+app_global_get
+intc_0 // 0
+>
+assert
+bytec_3 // "root"
+app_global_get
+frame_dig -2
+extract 2 0
+bytec 5 // "r"
+app_global_get
+concat
+sha256
+frame_dig -1
+callsub calculateroot_5
+==
+assert
+callsub paywinner_6
+bytec_0 // "balance"
+intc_0 // 0
+app_global_put
+retsub
+
+// calculate_root
+calculateroot_5:
+proto 2 1
+bytec_1 // ""
+intc_0 // 0
+dup
+frame_dig -2
+store 6
+intc_0 // 0
+store 7
+calculateroot_5_l1:
+load 7
+frame_dig -1
+intc_0 // 0
+extract_uint16
+frame_bury 1
+frame_dig 1
+<
+bz calculateroot_5_l6
+frame_dig -1
+intc_2 // 33
+load 7
+*
+pushint 2 // 2
++
+intc_2 // 33
+extract3
+frame_bury 0
+frame_dig 0
+intc_0 // 0
+getbyte
+intc_0 // 0
+==
+bnz calculateroot_5_l5
+frame_dig 0
+extract 1 32
+load 6
+concat
+sha256
+calculateroot_5_l4:
+store 6
+load 7
+intc_1 // 1
++
+store 7
+b calculateroot_5_l1
+calculateroot_5_l5:
+load 6
+frame_dig 0
+extract 1 32
+concat
+sha256
+b calculateroot_5_l4
+calculateroot_5_l6:
+load 6
+frame_bury 0
+retsub
+
+// pay_winner
+paywinner_6:
+proto 0 0
+itxn_begin
+intc_1 // pay
+itxn_field TypeEnum
+bytec_0 // "balance"
+app_global_get
+pushint 1000 // 1000
+-
+itxn_field Amount
+txn Sender
+itxn_field Receiver
+itxn_submit
+retsub
+
+// get_balance
+getbalance_7:
+proto 0 1
+intc_0 // 0
+global CurrentApplicationAddress
+balance
+frame_bury 0
+retsub
+
+// account_balance
+accountbalance_8:
+proto 0 1
+intc_0 // 0
+txn Sender
+balance
+frame_bury 0
+retsub
+
+// on_create_caster
+oncreatecaster_9:
+proto 0 0
+intc_0 // 0
+bytec_1 // ""
+dup
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+frame_dig 0
+frame_dig 1
+frame_dig 2
+callsub oncreate_0
+retsub
+
+// start_game_caster
+startgamecaster_10:
+proto 0 0
+intc_0 // 0
+txn GroupIndex
+intc_1 // 1
+-
+frame_bury 0
+frame_dig 0
+gtxns TypeEnum
+intc_1 // pay
+==
+assert
+frame_dig 0
+callsub startgame_1
+retsub
+
+// get_size_caster
+getsizecaster_11:
+proto 0 0
+intc_0 // 0
+callsub getsize_2
+frame_bury 0
+bytec 4 // 0x151f7c75
+frame_dig 0
+itob
+concat
+log
+retsub
+
+// get_root_caster
+getrootcaster_12:
+proto 0 0
+bytec_1 // ""
+callsub getroot_3
+frame_bury 0
+bytec 4 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// verify_leaf_caster
+verifyleafcaster_13:
+proto 0 0
+bytec_1 // ""
+dup
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+frame_dig 0
+frame_dig 1
+callsub verifyleaf_4
+retsub
+
+// get_balance_caster
+getbalancecaster_14:
+proto 0 0
+intc_0 // 0
+callsub getbalance_7
+frame_bury 0
+bytec 4 // 0x151f7c75
+frame_dig 0
+itob
+concat
+log
+retsub
+
+// account_balance_caster
+accountbalancecaster_15:
+proto 0 0
+intc_0 // 0
+callsub accountbalance_8
+frame_bury 0
+bytec 4 // 0x151f7c75
+frame_dig 0
+itob
+concat
+log
+retsub

@@ -1,0 +1,95 @@
+{
+    "name": "MerkleTree",
+    "methods": [
+        {
+            "name": "on_create",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "height",
+                    "desc": "The height of the Merkle Tree."
+                },
+                {
+                    "type": "byte[]",
+                    "name": "root",
+                    "desc": "The root of the Merkle Tree."
+                },
+                {
+                    "type": "byte[]",
+                    "name": "r",
+                    "desc": "The randomness to use in the leaves."
+                }
+            ],
+            "returns": {
+                "type": "void"
+            },
+            "desc": "Creates the Merkle Tree  game application."
+        },
+        {
+            "name": "start_game",
+            "args": [
+                {
+                    "type": "pay",
+                    "name": "payment",
+                    "desc": "The payment transaction that adds Algos to the contract."
+                }
+            ],
+            "returns": {
+                "type": "void"
+            },
+            "desc": "Starts the Merkle Tree game. Adding Algos to the contract."
+        },
+        {
+            "name": "get_size",
+            "args": [],
+            "returns": {
+                "type": "uint64"
+            },
+            "desc": "Returns the size of the Merkle Tree."
+        },
+        {
+            "name": "get_root",
+            "args": [],
+            "returns": {
+                "type": "byte[]"
+            },
+            "desc": "Returns the root of the Merkle Tree."
+        },
+        {
+            "name": "verify_leaf",
+            "args": [
+                {
+                    "type": "string",
+                    "name": "data",
+                    "desc": "The leaf to verify."
+                },
+                {
+                    "type": "byte[33][]",
+                    "name": "path",
+                    "desc": "The path to the leaf. That is composed of the nodes from the leaf to the root, of 33 bytes each. The first byte is the prefix (0 for left, 1 for right)."
+                }
+            ],
+            "returns": {
+                "type": "void"
+            },
+            "desc": "Verifies that the leaf is in the Merkle Tree."
+        },
+        {
+            "name": "get_balance",
+            "args": [],
+            "returns": {
+                "type": "uint64"
+            },
+            "desc": "Returns the balance of the contract."
+        },
+        {
+            "name": "account_balance",
+            "args": [],
+            "returns": {
+                "type": "uint64"
+            },
+            "desc": "Returns the balance of the account that called the method."
+        }
+    ],
+    "networks": {}
+}

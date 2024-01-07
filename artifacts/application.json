@@ -1,0 +1,185 @@
+{
+    "hints": {
+        "on_create(uint64,byte[],byte[])void": {
+            "call_config": {
+                "no_op": "CREATE"
+            }
+        },
+        "start_game(pay)void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "get_size()uint64": {
+            "read_only": true,
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "get_root()byte[]": {
+            "read_only": true,
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "verify_leaf(string,byte[33][])void": {
+            "read_only": true,
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "get_balance()uint64": {
+            "read_only": true,
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "account_balance()uint64": {
+            "read_only": true,
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMSAzMwpieXRlY2Jsb2NrIDB4NjI2MTZjNjE2ZTYzNjUgMHggMHg3MzY5N2E2NSAweDcyNmY2Zjc0IDB4MTUxZjdjNzUgMHg3Mgp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDI5OWNhYTU5IC8vICJvbl9jcmVhdGUodWludDY0LGJ5dGVbXSxieXRlW10pdm9pZCIKPT0KYm56IG1haW5fbDE0CnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4YWEyMGY1NTUgLy8gInN0YXJ0X2dhbWUocGF5KXZvaWQiCj09CmJueiBtYWluX2wxMwp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDZhZTg1ZDIxIC8vICJnZXRfc2l6ZSgpdWludDY0Igo9PQpibnogbWFpbl9sMTIKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHgwZDY3Y2IwMiAvLyAiZ2V0X3Jvb3QoKWJ5dGVbXSIKPT0KYm56IG1haW5fbDExCnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4NTg5YTRjMTkgLy8gInZlcmlmeV9sZWFmKHN0cmluZyxieXRlWzMzXVtdKXZvaWQiCj09CmJueiBtYWluX2wxMAp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweGI5MTBjNzdiIC8vICJnZXRfYmFsYW5jZSgpdWludDY0Igo9PQpibnogbWFpbl9sOQp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDQ5NDU1NjFjIC8vICJhY2NvdW50X2JhbGFuY2UoKXVpbnQ2NCIKPT0KYm56IG1haW5fbDgKZXJyCm1haW5fbDg6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgYWNjb3VudGJhbGFuY2VjYXN0ZXJfMTUKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDk6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgZ2V0YmFsYW5jZWNhc3Rlcl8xNAppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTA6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgdmVyaWZ5bGVhZmNhc3Rlcl8xMwppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTE6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgZ2V0cm9vdGNhc3Rlcl8xMgppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTI6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgZ2V0c2l6ZWNhc3Rlcl8xMQppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTM6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgc3RhcnRnYW1lY2FzdGVyXzEwCmludGNfMSAvLyAxCnJldHVybgptYWluX2wxNDoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAo9PQomJgphc3NlcnQKY2FsbHN1YiBvbmNyZWF0ZWNhc3Rlcl85CmludGNfMSAvLyAxCnJldHVybgoKLy8gb25fY3JlYXRlCm9uY3JlYXRlXzA6CnByb3RvIDMgMAppbnRjXzAgLy8gMApieXRlY18yIC8vICJzaXplIgphcHBfZ2xvYmFsX2dldF9leApzdG9yZSAxCnN0b3JlIDAKbG9hZCAxCiEKYXNzZXJ0CmJ5dGVjXzIgLy8gInNpemUiCmZyYW1lX2RpZyAtMwphcHBfZ2xvYmFsX3B1dAppbnRjXzAgLy8gMApieXRlY18zIC8vICJyb290IgphcHBfZ2xvYmFsX2dldF9leApzdG9yZSAzCnN0b3JlIDIKbG9hZCAzCiEKYXNzZXJ0CmJ5dGVjXzMgLy8gInJvb3QiCmZyYW1lX2RpZyAtMgpleHRyYWN0IDIgMAphcHBfZ2xvYmFsX3B1dApieXRlY18wIC8vICJiYWxhbmNlIgppbnRjXzAgLy8gMAphcHBfZ2xvYmFsX3B1dAppbnRjXzAgLy8gMApieXRlYyA1IC8vICJyIgphcHBfZ2xvYmFsX2dldF9leApzdG9yZSA1CnN0b3JlIDQKbG9hZCA1CiEKYXNzZXJ0CmJ5dGVjIDUgLy8gInIiCmZyYW1lX2RpZyAtMQpleHRyYWN0IDIgMAphcHBfZ2xvYmFsX3B1dApyZXRzdWIKCi8vIHN0YXJ0X2dhbWUKc3RhcnRnYW1lXzE6CnByb3RvIDEgMApmcmFtZV9kaWcgLTEKZ3R4bnMgUmVjZWl2ZXIKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKPT0KYXNzZXJ0CmZyYW1lX2RpZyAtMQpndHhucyBBbW91bnQKaW50Y18wIC8vIDAKPgphc3NlcnQKYnl0ZWNfMCAvLyAiYmFsYW5jZSIKZnJhbWVfZGlnIC0xCmd0eG5zIEFtb3VudAphcHBfZ2xvYmFsX3B1dApyZXRzdWIKCi8vIGdldF9zaXplCmdldHNpemVfMjoKcHJvdG8gMCAxCmludGNfMCAvLyAwCmJ5dGVjXzIgLy8gInNpemUiCmFwcF9nbG9iYWxfZ2V0CmZyYW1lX2J1cnkgMApyZXRzdWIKCi8vIGdldF9yb290CmdldHJvb3RfMzoKcHJvdG8gMCAxCmJ5dGVjXzEgLy8gIiIKYnl0ZWNfMyAvLyAicm9vdCIKYXBwX2dsb2JhbF9nZXQKZnJhbWVfYnVyeSAwCmZyYW1lX2RpZyAwCmxlbgppdG9iCmV4dHJhY3QgNiAwCmZyYW1lX2RpZyAwCmNvbmNhdApmcmFtZV9idXJ5IDAKcmV0c3ViCgovLyB2ZXJpZnlfbGVhZgp2ZXJpZnlsZWFmXzQ6CnByb3RvIDIgMAppbnRjXzAgLy8gMApieXRlY18yIC8vICJzaXplIgphcHBfZ2xvYmFsX2dldApmcmFtZV9kaWcgLTEKaW50Y18wIC8vIDAKZXh0cmFjdF91aW50MTYKZnJhbWVfYnVyeSAwCmZyYW1lX2RpZyAwCj09CmFzc2VydApieXRlY18wIC8vICJiYWxhbmNlIgphcHBfZ2xvYmFsX2dldAppbnRjXzAgLy8gMAo+CmFzc2VydApieXRlY18zIC8vICJyb290IgphcHBfZ2xvYmFsX2dldApmcmFtZV9kaWcgLTIKZXh0cmFjdCAyIDAKYnl0ZWMgNSAvLyAiciIKYXBwX2dsb2JhbF9nZXQKY29uY2F0CnNoYTI1NgpmcmFtZV9kaWcgLTEKY2FsbHN1YiBjYWxjdWxhdGVyb290XzUKPT0KYXNzZXJ0CmNhbGxzdWIgcGF5d2lubmVyXzYKYnl0ZWNfMCAvLyAiYmFsYW5jZSIKaW50Y18wIC8vIDAKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBjYWxjdWxhdGVfcm9vdApjYWxjdWxhdGVyb290XzU6CnByb3RvIDIgMQpieXRlY18xIC8vICIiCmludGNfMCAvLyAwCmR1cApmcmFtZV9kaWcgLTIKc3RvcmUgNgppbnRjXzAgLy8gMApzdG9yZSA3CmNhbGN1bGF0ZXJvb3RfNV9sMToKbG9hZCA3CmZyYW1lX2RpZyAtMQppbnRjXzAgLy8gMApleHRyYWN0X3VpbnQxNgpmcmFtZV9idXJ5IDEKZnJhbWVfZGlnIDEKPApieiBjYWxjdWxhdGVyb290XzVfbDYKZnJhbWVfZGlnIC0xCmludGNfMiAvLyAzMwpsb2FkIDcKKgpwdXNoaW50IDIgLy8gMgorCmludGNfMiAvLyAzMwpleHRyYWN0MwpmcmFtZV9idXJ5IDAKZnJhbWVfZGlnIDAKaW50Y18wIC8vIDAKZ2V0Ynl0ZQppbnRjXzAgLy8gMAo9PQpibnogY2FsY3VsYXRlcm9vdF81X2w1CmZyYW1lX2RpZyAwCmV4dHJhY3QgMSAzMgpsb2FkIDYKY29uY2F0CnNoYTI1NgpjYWxjdWxhdGVyb290XzVfbDQ6CnN0b3JlIDYKbG9hZCA3CmludGNfMSAvLyAxCisKc3RvcmUgNwpiIGNhbGN1bGF0ZXJvb3RfNV9sMQpjYWxjdWxhdGVyb290XzVfbDU6CmxvYWQgNgpmcmFtZV9kaWcgMApleHRyYWN0IDEgMzIKY29uY2F0CnNoYTI1NgpiIGNhbGN1bGF0ZXJvb3RfNV9sNApjYWxjdWxhdGVyb290XzVfbDY6CmxvYWQgNgpmcmFtZV9idXJ5IDAKcmV0c3ViCgovLyBwYXlfd2lubmVyCnBheXdpbm5lcl82Ogpwcm90byAwIDAKaXR4bl9iZWdpbgppbnRjXzEgLy8gcGF5Cml0eG5fZmllbGQgVHlwZUVudW0KYnl0ZWNfMCAvLyAiYmFsYW5jZSIKYXBwX2dsb2JhbF9nZXQKcHVzaGludCAxMDAwIC8vIDEwMDAKLQppdHhuX2ZpZWxkIEFtb3VudAp0eG4gU2VuZGVyCml0eG5fZmllbGQgUmVjZWl2ZXIKaXR4bl9zdWJtaXQKcmV0c3ViCgovLyBnZXRfYmFsYW5jZQpnZXRiYWxhbmNlXzc6CnByb3RvIDAgMQppbnRjXzAgLy8gMApnbG9iYWwgQ3VycmVudEFwcGxpY2F0aW9uQWRkcmVzcwpiYWxhbmNlCmZyYW1lX2J1cnkgMApyZXRzdWIKCi8vIGFjY291bnRfYmFsYW5jZQphY2NvdW50YmFsYW5jZV84Ogpwcm90byAwIDEKaW50Y18wIC8vIDAKdHhuIFNlbmRlcgpiYWxhbmNlCmZyYW1lX2J1cnkgMApyZXRzdWIKCi8vIG9uX2NyZWF0ZV9jYXN0ZXIKb25jcmVhdGVjYXN0ZXJfOToKcHJvdG8gMCAwCmludGNfMCAvLyAwCmJ5dGVjXzEgLy8gIiIKZHVwCnR4bmEgQXBwbGljYXRpb25BcmdzIDEKYnRvaQpmcmFtZV9idXJ5IDAKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMgpmcmFtZV9idXJ5IDEKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMwpmcmFtZV9idXJ5IDIKZnJhbWVfZGlnIDAKZnJhbWVfZGlnIDEKZnJhbWVfZGlnIDIKY2FsbHN1YiBvbmNyZWF0ZV8wCnJldHN1YgoKLy8gc3RhcnRfZ2FtZV9jYXN0ZXIKc3RhcnRnYW1lY2FzdGVyXzEwOgpwcm90byAwIDAKaW50Y18wIC8vIDAKdHhuIEdyb3VwSW5kZXgKaW50Y18xIC8vIDEKLQpmcmFtZV9idXJ5IDAKZnJhbWVfZGlnIDAKZ3R4bnMgVHlwZUVudW0KaW50Y18xIC8vIHBheQo9PQphc3NlcnQKZnJhbWVfZGlnIDAKY2FsbHN1YiBzdGFydGdhbWVfMQpyZXRzdWIKCi8vIGdldF9zaXplX2Nhc3RlcgpnZXRzaXplY2FzdGVyXzExOgpwcm90byAwIDAKaW50Y18wIC8vIDAKY2FsbHN1YiBnZXRzaXplXzIKZnJhbWVfYnVyeSAwCmJ5dGVjIDQgLy8gMHgxNTFmN2M3NQpmcmFtZV9kaWcgMAppdG9iCmNvbmNhdApsb2cKcmV0c3ViCgovLyBnZXRfcm9vdF9jYXN0ZXIKZ2V0cm9vdGNhc3Rlcl8xMjoKcHJvdG8gMCAwCmJ5dGVjXzEgLy8gIiIKY2FsbHN1YiBnZXRyb290XzMKZnJhbWVfYnVyeSAwCmJ5dGVjIDQgLy8gMHgxNTFmN2M3NQpmcmFtZV9kaWcgMApjb25jYXQKbG9nCnJldHN1YgoKLy8gdmVyaWZ5X2xlYWZfY2FzdGVyCnZlcmlmeWxlYWZjYXN0ZXJfMTM6CnByb3RvIDAgMApieXRlY18xIC8vICIiCmR1cAp0eG5hIEFwcGxpY2F0aW9uQXJncyAxCmZyYW1lX2J1cnkgMAp0eG5hIEFwcGxpY2F0aW9uQXJncyAyCmZyYW1lX2J1cnkgMQpmcmFtZV9kaWcgMApmcmFtZV9kaWcgMQpjYWxsc3ViIHZlcmlmeWxlYWZfNApyZXRzdWIKCi8vIGdldF9iYWxhbmNlX2Nhc3RlcgpnZXRiYWxhbmNlY2FzdGVyXzE0Ogpwcm90byAwIDAKaW50Y18wIC8vIDAKY2FsbHN1YiBnZXRiYWxhbmNlXzcKZnJhbWVfYnVyeSAwCmJ5dGVjIDQgLy8gMHgxNTFmN2M3NQpmcmFtZV9kaWcgMAppdG9iCmNvbmNhdApsb2cKcmV0c3ViCgovLyBhY2NvdW50X2JhbGFuY2VfY2FzdGVyCmFjY291bnRiYWxhbmNlY2FzdGVyXzE1Ogpwcm90byAwIDAKaW50Y18wIC8vIDAKY2FsbHN1YiBhY2NvdW50YmFsYW5jZV84CmZyYW1lX2J1cnkgMApieXRlYyA0IC8vIDB4MTUxZjdjNzUKZnJhbWVfZGlnIDAKaXRvYgpjb25jYXQKbG9nCnJldHN1Yg==",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 2,
+            "num_uints": 2
+        },
+        "local": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {
+                "balance": {
+                    "type": "uint64",
+                    "key": "balance",
+                    "descr": ""
+                },
+                "r": {
+                    "type": "bytes",
+                    "key": "r",
+                    "descr": ""
+                },
+                "root": {
+                    "type": "bytes",
+                    "key": "root",
+                    "descr": ""
+                },
+                "size": {
+                    "type": "uint64",
+                    "key": "size",
+                    "descr": ""
+                }
+            },
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "MerkleTree",
+        "methods": [
+            {
+                "name": "on_create",
+                "args": [
+                    {
+                        "type": "uint64",
+                        "name": "height",
+                        "desc": "The height of the Merkle Tree."
+                    },
+                    {
+                        "type": "byte[]",
+                        "name": "root",
+                        "desc": "The root of the Merkle Tree."
+                    },
+                    {
+                        "type": "byte[]",
+                        "name": "r",
+                        "desc": "The randomness to use in the leaves."
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                },
+                "desc": "Creates the Merkle Tree  game application."
+            },
+            {
+                "name": "start_game",
+                "args": [
+                    {
+                        "type": "pay",
+                        "name": "payment",
+                        "desc": "The payment transaction that adds Algos to the contract."
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                },
+                "desc": "Starts the Merkle Tree game. Adding Algos to the contract."
+            },
+            {
+                "name": "get_size",
+                "args": [],
+                "returns": {
+                    "type": "uint64"
+                },
+                "desc": "Returns the size of the Merkle Tree."
+            },
+            {
+                "name": "get_root",
+                "args": [],
+                "returns": {
+                    "type": "byte[]"
+                },
+                "desc": "Returns the root of the Merkle Tree."
+            },
+            {
+                "name": "verify_leaf",
+                "args": [
+                    {
+                        "type": "string",
+                        "name": "data",
+                        "desc": "The leaf to verify."
+                    },
+                    {
+                        "type": "byte[33][]",
+                        "name": "path",
+                        "desc": "The path to the leaf. That is composed of the nodes from the leaf to the root, of 33 bytes each. The first byte is the prefix (0 for left, 1 for right)."
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                },
+                "desc": "Verifies that the leaf is in the Merkle Tree."
+            },
+            {
+                "name": "get_balance",
+                "args": [],
+                "returns": {
+                    "type": "uint64"
+                },
+                "desc": "Returns the balance of the contract."
+            },
+            {
+                "name": "account_balance",
+                "args": [],
+                "returns": {
+                    "type": "uint64"
+                },
+                "desc": "Returns the balance of the account that called the method."
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {}
+}
